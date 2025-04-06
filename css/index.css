@@ -8,6 +8,8 @@ header{
     height: 100vh;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    
 }
 .background{
     width: 100%;
