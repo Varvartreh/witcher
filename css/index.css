@@ -37,7 +37,7 @@ header{
 }
 .ava{
     width: 3vw;
-    height: 3vw;
+    height: 1vh;
     border-radius: 90px;
     position: relative;
     overflow: hidden;
@@ -53,12 +53,25 @@ main{
     display: flex;
     flex-direction: row;
     width: 40vw;
-    height: 20vh;
+    height: 7vh;
+    
+    
+    box-shadow: -5px 0px  red;
+    border-radius: 4px;
 }
-
+.near{
+    width: 41vw;
+    height: 7vh;
+    box-shadow: 5px 5px 6px gray;
+    border-radius: 4px;
+}
 .card_conteiner{
     display: flex;
     flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10vw;
 }
 .ab1{
     margin: 1vw;
@@ -78,12 +91,23 @@ h2{
 }
 
 li{
-    width: 18vw;
-    height: 5vh;
+    width: 19vw;
+    height: 6vh;
     border: 2px solid white;
-    box-shadow: 0px 0px 7px gray;
+    box-shadow: 0px 0px 6px gray;
     border-radius: 4px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+footer{
+    padding-left: 20vw;
+    margin-top: 10vh;
+    height: 20vh;
+
+}
+a{
+    color: black;
+    text-decoration: none;
 }
