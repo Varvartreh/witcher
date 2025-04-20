@@ -9,9 +9,10 @@ header{
     position: relative;
     overflow: hidden;
     display: flex;
+    align-items: center;
     text-align: center;
     color: white;
-    align-items: center;
+    
 }
 .background{
     width: 100%;
@@ -32,16 +33,14 @@ header{
     border-radius: 15px;
 
     flex-direction: column;
-
+    justify-self: center;
     text-align: center;
 }
 .ava{
-    width: 3vw;
-    height: 1vh;
-    border-radius: 90px;
-    position: relative;
+    width: 5vw;
+    height: 5vh;
+    border-radius: 9px ;
 
-    display: flex;
 }
 
 main{
@@ -52,7 +51,7 @@ main{
 .card{
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 30vw;
     height: 7vh;
     
     
@@ -60,10 +59,18 @@ main{
     border-radius: 4px;
 }
 .near{
-    width: 41vw;
+    width: 31vw;
     height: 7vh;
     box-shadow: 5px 5px 6px gray;
     border-radius: 4px;
+}
+
+.near:hover{
+    transition-property: transform;
+    transform: translate(0px,-20px);
+    transition-duration: 0.3s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
 }
 .card_conteiner{
     display: flex;
@@ -71,7 +78,9 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 10vw;
+    margin-right: 20vw;
+    margin-left: 5vw;
+    margin-top: 3vh;
 }
 .ab1{
     margin: 1vw;
@@ -115,4 +124,9 @@ a{
 .contacts, .links{
     padding-top: 1vh;
     padding-left: 1vw;
+}
+
+.ab{
+    width: 90vw;
+    margin-bottom: 5vh;
 }
