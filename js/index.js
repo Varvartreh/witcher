@@ -1,44 +1,46 @@
-gsap.isterPlugin(ScrollSmoother, ScrollTrigger)
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
-const sensetivity = 0.4
+const sensetivity = 0.2
 
-document.addEventListener('mousemove', (e)=>{
-    let dx=(e.clientX-window.innerWidth/2)*sensetivity
-    let dy=(e.clientY-window.innerHeight/2)*sensetivity
+document.addEventListener('mousemove', (e) => {
+    let dx = (e.clientX - window.innerWidth / 2) * sensetivity
+    let dy = (e.clientY - window.innerHeight / 2) * sensetivity
 
-    gsap.to(".layers__container",{
+    gsap.to(".layers__container", {
         duration: 1.5,
-        x: dx,
-        y:dy,
-        rotationX:dy/10,
-        rotationY:dx/10,
+        x: dx/3,
+        y: dy/3,
+        rotationX: dy / 50,
+        rotationY: dx / 50,
         ease: "power2.out",
     })
-    gsap.to(".head-text",{
+    gsap.to(".head-text", {
         duration: 1.5,
-        x:-dx,
-        y:-dy,
+        x: -dx/2,
+        y: -dy/2,
         ease: "power2.out",
     })
 })
 
 ScrollSmoother.create({
-    wrapper:"wrapper",
+    wrapper: "wrapper",
     content: "wrapper_content",
-    smooth:1.5,
-    effects:true,
+    smooth: 1.5,
+    effects: true,
 })
 
-gsap.utils.toArray('section').forEach(section=>{
+gsap.utils.toArray('section').forEach(section => {
     gsap.fromTo(
         section,
-        {opacity:0, y:25},
-        {opacity:1, y:0, ScrollTrigger:{
-            trigger: section,
-            start:'top center+=100',
-            end:'bottom center',
-            toggleActions:"play none none reverse",
-        }}
+        { opacity: 0, y: 25 },
+        {
+            opacity: 1, y: 0, crollTrigger: {
+                trigger: section,
+                start: 'top center+=100',
+                end: 'bottom center',
+                toggleActions: "play none none reverse",
+            }
+        }
 
     )
 })
