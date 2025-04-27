@@ -8,16 +8,16 @@ document.addEventListener('mousemove', (e)=>{
 
     gsap.to(".layers__container",{
         duration: 1.5,
-        x: x,
-        y:y,
-        rotationX:y/10,
-        rotationY:x/10,
+        x: dx,
+        y:dy,
+        rotationX:dy/10,
+        rotationY:dx/10,
         ease: "power2.out",
     })
     gsap.to(".head-text",{
         duration: 1.5,
-        rotationX:-y/10,
-        rotationY:-x/10,
+        x:-dx,
+        y:-dy,
         ease: "power2.out",
     })
 })
@@ -28,3 +28,18 @@ ScrollSmoother.create({
     smooth:1.5,
     effects:true,
 })
+
+gsap.utils.toArray('section').forEach(section=>{
+    gsap.fromTo(
+        section,
+        {opacity:0, y:25},
+        {opacity:1, y:0, ScrollTrigger:{
+            trigger: section,
+            start:'top center+=100',
+            end:'bottom center',
+            toggleActions:"play none none reverse",
+        }}
+
+    )
+})
+
