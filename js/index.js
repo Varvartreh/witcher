@@ -50,6 +50,15 @@ function initGallery(){
     let gallery = document.querySelector('.gallery')
     let gallery_item = document.querySelectorAll('.gallery_item')
     gallery.style.setProperty("--total-items", gallery_item.length)
+    gallery.addEventListener('click', (event)=>{
+        let clicked = event.target.closest(".gallery_item")
+        if (!clicked || clicked.classList.contains("active")) return
+
+        gallery_item.forEach((item)=>{
+            item.classList.remove("active")
+    })
+    clicked.classList.add("active")
+    })
 }
 
 document.addEventListener('DOMContentLoaded', initGallery)
