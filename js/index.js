@@ -8,8 +8,8 @@ document.addEventListener('mousemove', (e) => {
 
     gsap.to(".layers__container", {
         duration: 1.5,
-        x: dx/3,
-        y: dy/3,
+        x: -dx/3,
+        y: -dy/3,
         rotationX: dy / 50,
         rotationY: dx / 50,
         ease: "power2.out",
@@ -29,19 +29,33 @@ ScrollSmoother.create({
     effects: true,
 })
 
-gsap.utils.toArray('section').forEach(section => {
+/*gsap.utils.toArray('section').forEach(section => {
     gsap.fromTo(
         section,
-        { opacity: 0, y: 25 },
+        { opacity: 0, y: 100 },
         {
-            opacity: 1, y: 0, crollTrigger: {
+            opacity: 1, y: 0, scrollTrigger: {
                 trigger: section,
-                start: 'top center+=100',
-                end: 'bottom center',
+                start: 'start center+10',
+                end: 'start center',
                 toggleActions: "play none none reverse",
             }
         }
 
     )
-})
+})*/
+
+
+function initGallery(){
+    let gallery = document.querySelector('.gallery')
+    let gallery_item = document.querySelectorAll('.gallery_item')
+    gallery.style.setProperty("--total-items", gallery_item.length)
+}
+
+document.addEventListener('DOMContentLoaded', initGallery)
+
+
+
+
+
 
