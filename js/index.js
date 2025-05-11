@@ -64,7 +64,31 @@ function initGallery(){
 document.addEventListener('DOMContentLoaded', initGallery)
 
 
+const themeChanger = document.querySelector(".theme-change")
 
-
+themeChanger.addEventListener("click", () =>{
+    let isLight = localStorage.getItem('theme')=='light'
+    let card = document.querySelector('.background')
+    if(isLight){
+        localStorage.setItem('theme', 'dark')
+        themeChanger.innerHTML = '<i class="fas fa-moon"></i>'
+        document.documentElement.style.setProperty("--dark", "#FFFFFF")
+        document.documentElement.style.setProperty("--light", "#161616")
+        document.documentElement.style.setProperty("--text-d", "#FFFFFF")
+        document.documentElement.style.setProperty("--text-l", "#000000")
+        document.documentElement.style.setProperty("--gray", "#333333")
+        document.style = "background-image: url(images/image.png)"
+    }
+    else{
+        localStorage.setItem('theme', 'light')
+        themeChanger.innerHTML =  '<i class="fas fa-sun"></i>'
+        document.documentElement.style.setProperty("--dark", "#161616")
+        document.documentElement.style.setProperty("--light", "#FFFFFF")
+        document.documentElement.style.setProperty("--text-d", "#000000")
+        document.documentElement.style.setProperty("--text-l", "#FFFFFF")
+        document.documentElement.style.setProperty("--gray", "gray")
+        document.style = "background-image: url(images/w_bac_night.webp)"
+    }
+})
 
 

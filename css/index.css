@@ -3,8 +3,57 @@
     padding: 0;
     margin: 0;
     border: 0;
+    transition: color 200ms ease, background-color 200ms ease;
 }
 
+:root{
+
+    --dark:  #FFFFFF /*#161616*/;
+    --light:  #161616/*#FFFFFF*/;
+    --text-d:  #FFFFFF/* #000000*/;
+    --text-l: #000000/* #FFFFFF*/;
+
+    --gray: #333333/*gray*/; 
+
+    
+}
+
+.theme-change{
+    width: 5vw;
+    height: 5vh;
+
+    color: #F2F2F2;
+    background-color: rgb(255,255,255,0.3);
+    border: 2px solid #F2F2F2;
+    border-radius: 2.5vh;
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 
+        background-color 200ms ease,
+        transform 50ms ease;
+}
+
+.theme-change:hover{
+    background-color: rgb(255,255,255,0.6);}
+
+
+.theme-change:active{
+    transform: translateY(2px);
+}
+
+
+body{
+    background-color: var(--light);
+    color: var(--dark);
+}
 .layers__container{
     height: 100vh;
     width: 100vw;
@@ -25,7 +74,7 @@ header{
     display: flex;
     align-items: center;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: var(--text-d);
     
 }
 .background{
@@ -59,13 +108,13 @@ header{
     text-align: center;
     margin-left: 34vw;
     margin-top: 30vh;
-    
+    color: var(--text-d  )
 }
 .ava{
     width: 5vw;
     height: 5vh;
     border-radius: 9px ;
-margin-left: 0.5vw;
+    margin-left: 0.5vw;
 }
 
 main{
@@ -86,7 +135,7 @@ main{
 .near{
     width: 31vw;
     height: 7vh;
-    box-shadow: 5px 5px 6px gray;
+    box-shadow: 5px 5px 6px var(--gray);
     border-radius: 4px;
 }
 
@@ -128,7 +177,7 @@ h2{
 li{
     width: 20vw;
     height: 6vh;
-    border: 2px solid white;
+    border: 2px solid var(--text-l);
     box-shadow: 0px 0px 6px gray;
     border-radius: 4px;
     display: flex;
@@ -140,10 +189,13 @@ footer{
     padding-left: 20vw;
     margin-top: 10vh;
     height: 20vh;
-
+    background: #000000;
+    background: linear-gradient(70deg,rgba(0, 0, 0, 1) 0%, rgba(128, 1, 1, 1) 72%, rgba(255, 0, 0, 1) 100%);
+    color: white;
 }
+
 a{
-    color: black;
+    color: var(--text-d);
     text-decoration: none;
 }
 
