@@ -7,8 +7,7 @@
     <title>Witcher</title>
     <link rel="stylesheet" href="css/index.css">
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="js/index.js" defer></script>
     <script src="libs/gsap.min.js"></script>
     <script src="libs/ScrollSmoother.min.js"></script>
@@ -65,14 +64,35 @@
                             а также последняя, которая повествует о приключениях Геральта из Ривии.</p>
                     </div>
 
-                     
-                    <div class="gallery_wrapper"><div class="gallery">
-                        <div style="background-image: url(images/w1.jpeg);" class="gallery_item active"> </div>
-                        <div style="background-image: url(images/w2.jpg);" class="gallery_item"> </div>
-                        <div style="background-image: url(images/w3.jpg);" class="gallery_item"> </div>
-                        <div style="background-image: url(images/w4.jpg);" class="gallery_item"> </div>
-                        <div style="background-image: url(images/w5.jpg);" class="gallery_item"> </div>
-                    </div></div>
+
+                    <div class="gallery_wrapper">
+                        <div class="gallery">
+                            <div style="background-image: url(images/w1.jpeg);" class="gallery_item active"> </div>
+                            <div style="background-image: url(images/w2.jpg);" class="gallery_item"> </div>
+                            <div style="background-image: url(images/w3.jpg);" class="gallery_item"> </div>
+                            <div style="background-image: url(images/w4.jpg);" class="gallery_item"> </div>
+                            <div style="background-image: url(images/w5.jpg);" class="gallery_item"> </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="music">
+                    <h2>Саундтрек дня</h2>
+                    <div class="track-player">
+                        <div class="vinyl" style="background: url(images/w3.jpg);"></div>
+                        <div class="track-info">
+                            <h3 class="track-title">Title</h3>
+                            <p class="composer">Composer</p>
+                            <audio id="audioPlayer" src="Vedmak_3_-_The_Witcher_3_OST_Merchants_Of_Novigrad_(SkySound.cc).mp3"></audio>
+                            <div class="player-cotnrols">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                                <div class="progress-bar">
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="time">0:00 / 0:00</div>
+                            </div>
+
+                        </div>
+                    </div>
                 </section>
                 <section class="comments">
                     <h2>Отзывы игроков</h2>

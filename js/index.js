@@ -91,4 +91,39 @@ themeChanger.addEventListener("click", () =>{
     }
 })
 
+function initPlayer(){
+    const btn = document.querySelector('.play-btn')
+    const audio = document.getElementById("audioPlayer")
+    const progress = document.querySelector('.progress')
 
+    btn.addEventListener('click', () =>{
+        if (audio.paused){
+            audio.play()
+            btn.innerHTML = "<i class='fa fa-pause '></i>"
+        }
+        else{    
+            audio.pause()
+            btn.innerHTML = "<i class='fa fa-play '></i>"
+        }
+    })
+    
+    const time= document.querySelector('.time')
+    audio.addEventListener('timeupdate', () =>{
+        progress.style.width = `${audio.currentTime/audio.duration * 100}%`
+
+        let minutes = Math.floor(audio.currentTime / 60)
+        let seconds = Math.floor(audio.currentTime % 60).toString().padStart(2,'0')
+        let maxminutes = Math.floor(audio.duration / 60)
+        let maxseconds = Math.floor(audio.duration % 60).toString().padStart(2,'0')
+
+        time.innerHTML=`${minutes}:${seconds}/${maxminutes}:${maxseconds}`
+    }) 
+
+    document.querySelector('.progress-bar').addEventListener('click', (e) =>{
+        const rect = e.target.getBoundingClientRect()
+        const pos = (e.clientX - rect.left)/rect.width
+        audio.currentTime = pos*audio.duration
+    })
+} 
+
+document.addEventListener('DOMContentLoaded', initPlayer)
